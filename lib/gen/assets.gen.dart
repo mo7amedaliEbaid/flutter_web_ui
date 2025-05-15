@@ -12,6 +12,15 @@ import 'package:flutter/widgets.dart';
 class $AssetsPngGen {
   const $AssetsPngGen();
 
+  /// File path: assets/png/card1.png
+  AssetGenImage get card1 => const AssetGenImage('assets/png/card1.png');
+
+  /// File path: assets/png/card2.png
+  AssetGenImage get card2 => const AssetGenImage('assets/png/card2.png');
+
+  /// File path: assets/png/card3.png
+  AssetGenImage get card3 => const AssetGenImage('assets/png/card3.png');
+
   /// File path: assets/png/grid1.png
   AssetGenImage get grid1 => const AssetGenImage('assets/png/grid1.png');
 
@@ -32,6 +41,9 @@ class $AssetsPngGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    card1,
+    card2,
+    card3,
     grid1,
     grid2,
     grid3,

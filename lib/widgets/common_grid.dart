@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_ui/widgets/grid_item.dart';
 
 import '../configs/app_dimensions.dart';
 import '../responsive/responsive_grid.dart';
@@ -13,29 +14,24 @@ class CommonGrid extends StatefulWidget {
 class _CommonGridState extends State<CommonGrid> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ResponsiveGridView(
-        padding: EdgeInsets.symmetric(
-          horizontal: AppDimensions.normalize(20),
-          vertical: AppDimensions.normalize(7),
-        ),
-        gridDelegate: ResponsiveGridDelegate(
-          maxCrossAxisExtent: 200,
-          mainAxisSpacing: 16,
-          crossAxisSpacing: 16,
-          childAspectRatio: 1,
-        ),
-        children: List.generate(8, (index) {
-          return Container(
-            color: Colors.blue,
-            alignment: Alignment.center,
-            child: Text(
-              'Item $index',
-              style: TextStyle(color: Colors.white),
-            ),
-          );
-        }),
+    return ResponsiveGridView(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimensions.normalize(20),
+        //   vertical: AppDimensions.normalize(7),
       ),
+      gridDelegate: ResponsiveGridDelegate(
+        maxCrossAxisExtent: 300,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        childAspectRatio: .8,
+      ),
+      children: List.generate(8, (index) {
+        return GridItem(
+          assetPath: gridAssets[index],
+        );
+      }),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_web_ui/configs/configs.dart';
@@ -5,6 +6,16 @@ import 'package:flutter_web_ui/widgets/common_grid.dart';
 
 import '../gen/assets.gen.dart';
 import '../widgets/common_row.dart';
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  // Override to allow mouse, touch, etc.
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+      };
+}
 
 class DesktopView extends StatefulWidget {
   const DesktopView({super.key});
@@ -33,14 +44,25 @@ class _DesktopViewState extends State<DesktopView> {
             height: 0,
             indent: 0,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppDimensions.normalize(20),
-              vertical: AppDimensions.normalize(7),
+          Expanded(
+            child: ScrollConfiguration(
+              behavior: MyCustomScrollBehavior(),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppDimensions.normalize(20),
+                        vertical: AppDimensions.normalize(7),
+                      ),
+                      child: CommonRow(),
+                    ),
+                    CommonGrid(),
+                  ],
+                ),
+              ),
             ),
-            child: CommonRow(),
-          ),
-          CommonGrid(),
+          )
         ],
       ),
     );
