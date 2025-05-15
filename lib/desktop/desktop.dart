@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_web_ui/configs/configs.dart';
 import 'package:flutter_web_ui/widgets/common_grid.dart';
+
+import '../gen/assets.gen.dart';
+import '../widgets/common_row.dart';
 
 class DesktopView extends StatefulWidget {
   const DesktopView({super.key});
@@ -14,8 +19,26 @@ class _DesktopViewState extends State<DesktopView> {
     return Scaffold(
       body: Column(
         children: [
-          Row(
-            children: [],
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppDimensions.normalize(20),
+              vertical: AppDimensions.normalize(7),
+            ),
+            child: Row(
+              children: [SvgPicture.asset(Assets.svg.logo)],
+            ),
+          ),
+          Divider(
+            color: Color(0xff262626),
+            height: 0,
+            indent: 0,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppDimensions.normalize(20),
+              vertical: AppDimensions.normalize(7),
+            ),
+            child: CommonRow(),
           ),
           CommonGrid(),
         ],
