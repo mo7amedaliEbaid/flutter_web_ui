@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_web_ui/configs/configs.dart';
 import 'package:flutter_web_ui/widgets/common_grid.dart';
+import 'package:flutter_web_ui/widgets/tabs_row.dart';
 
 import '../gen/assets.gen.dart';
 import '../widgets/common_row.dart';
@@ -36,7 +37,11 @@ class _DesktopViewState extends State<DesktopView> {
               vertical: AppDimensions.normalize(7),
             ),
             child: Row(
-              children: [SvgPicture.asset(Assets.svg.logo)],
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SvgPicture.asset(Assets.svg.logo),
+                CustomTabBar(),
+              ],
             ),
           ),
           Divider(
