@@ -34,13 +34,63 @@ class _DesktopViewState extends State<DesktopView> {
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: AppDimensions.normalize(20),
-              vertical: AppDimensions.normalize(7),
+              //  vertical: AppDimensions.normalize(7),
+            ).copyWith(
+              top: AppDimensions.normalize(0),
+              //  bottom: AppDimensions.normalize(3),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SvgPicture.asset(Assets.svg.logo),
-                CustomTabBar(),
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: AppDimensions.normalize(8),
+                      ),
+                      child: Row(
+                        children: [
+                          CustomTabBar(),
+                          //   Space.xf(),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: AppDimensions.normalize(10),
+                      width: .5,
+                      padding: EdgeInsets.only(bottom: 70),
+                      color: Color(0xff484848),
+                    ),
+                    Space.xf(),
+                    SvgPicture.asset(Assets.svg.setting),
+                    Space.xf(),
+                    SvgPicture.asset(Assets.svg.notification),
+                    Space.xf(),
+                    Container(
+                      height: AppDimensions.normalize(10),
+                      width: .5,
+                      padding: EdgeInsets.only(bottom: 70),
+                      color: Color(0xff484848),
+                    ),
+                    Space.xf(),
+                    Image.asset(
+                      Assets.png.johnDoe.path,
+                      height: AppDimensions.normalize(10),
+                    ),
+                    Space.xf(.7),
+                    Text(
+                      "John Doe",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                      ),
+                    ),
+                    Space.xf(.3),
+                    SvgPicture.asset(Assets.svg.chevronDown)
+                  ],
+                ),
               ],
             ),
           ),
@@ -58,7 +108,10 @@ class _DesktopViewState extends State<DesktopView> {
                     Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: AppDimensions.normalize(20),
-                        vertical: AppDimensions.normalize(7),
+                        //  vertical: AppDimensions.normalize(7),
+                      ).copyWith(
+                        top: AppDimensions.normalize(7),
+                        bottom: AppDimensions.normalize(9),
                       ),
                       child: CommonRow(),
                     ),

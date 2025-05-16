@@ -62,6 +62,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/chevron-down.svg
   String get chevronDown => 'assets/svg/chevron-down.svg';
 
+  /// File path: assets/svg/filter_button.svg
+  String get filterButton => 'assets/svg/filter_button.svg';
+
   /// File path: assets/svg/logo.svg
   String get logo => 'assets/svg/logo.svg';
 
@@ -87,6 +90,7 @@ class $AssetsSvgGen {
   List<String> get values => [
     calendar,
     chevronDown,
+    filterButton,
     logo,
     menu,
     more,

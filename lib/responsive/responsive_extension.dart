@@ -7,7 +7,7 @@ extension ResponsiveExtension on BuildContext {
     final width = MediaQuery.of(this).size.width;
     if (width >= 1024) {
       return ResponsiveBreakpoint.desktop;
-    } else if (width >= 600) {
+    } else if (width >= 728) {
       return ResponsiveBreakpoint.tablet;
     } else {
       return ResponsiveBreakpoint.mobile;
