@@ -58,7 +58,7 @@ class _TabletViewState extends State<TabletView> {
                       color: Color(0xff484848),
                     ),
                     Space.xf(),
-                    SvgPicture.asset(Assets.svg.filterButton),
+                    SvgPicture.asset(Assets.svg.menu),
                   ],
                 ),
               ],

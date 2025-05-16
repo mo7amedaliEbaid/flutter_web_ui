@@ -68,3 +68,30 @@ class _CommonRowState extends State<CommonRow> {
     );
   }
 }
+
+class MobileRow extends StatefulWidget {
+  const MobileRow({super.key});
+
+  @override
+  State<MobileRow> createState() => _MobileRowState();
+}
+
+class _MobileRowState extends State<MobileRow> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Items',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w400,
+            fontSize: 22,
+          ),
+        ),
+        SvgPicture.asset(Assets.svg.filterButton),
+      ],
+    );
+  }
+}

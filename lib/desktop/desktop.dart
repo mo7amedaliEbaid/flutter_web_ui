@@ -80,7 +80,7 @@ class _DesktopViewState extends State<DesktopView> {
                     ),
                     Space.xf(.7),
                     Text(
-                      "John Doe",
+                      "Mohamed Ali",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w400,
